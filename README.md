@@ -1,173 +1,117 @@
-----------------------------------------------------------------------------------------------------
-                                 SISTEMA DE GERENCIAMENTO DE HOTEL
+# Sistema de Gerenciamento de Hotel
 
-----------------------------------------------------------------------------------------------------
+Este projeto é um sistema de gerenciamento de hotel desenvolvido em Python com integração ao banco de dados MySQL. Ele oferece uma solução completa para realizar operações CRUD (Criar, Ler, Atualizar, Excluir) em clientes, quartos e reservas, além de gerar relatórios detalhados sobre a operação do hotel.
 
-Este projeto é um sistema de gerenciamento de hotel desenvolvido em Python, utilizando o MySQL como 
-banco de dados. Ele permite realizar operações CRUD (Criar, Ler, Atualizar e Excluir) para gerenciar 
-entidades como Clientes, Quartos e Reservas, além de gerar relatórios sobre o uso do hotel.
+## 🎬 Vídeo de Demonstração
 
-Link para o vídeo de demonstração do código: https://youtu.be/Mjx05IhnHu4?feature=shared
+Assista a uma demonstração completa do sistema, apresentando as principais funcionalidades, desde cadastros até a geração de relatórios.
 
-----------------------------------------------------------------------------------------------------
-FUNCIONALIDADES
-----------------------------------------------------------------------------------------------------
+[Link para o vídeo de demonstração](https://youtu.be/Mjx05IhnHu4?feature=shared)
 
-1. Gerenciamento de Clientes:
-   - Cadastrar um novo cliente.
-   - Listar todos os clientes cadastrados.
-   - Atualizar informações de um cliente existente.
-   - Excluir um cliente e, se necessário, suas reservas associadas.
+## ✨ Funcionalidades Principais
 
-2. Gerenciamento de Quartos:
-   - Cadastrar novos quartos especificando o tipo, valor da diária e limite de pessoas.
-   - Listar todos os quartos cadastrados, indicando se estão livres ou ocupados.
-   - Atualizar informações de quartos, caso não estejam ocupados.
-   - Excluir quartos e cancelar reservas associadas, se necessário.
+O sistema oferece um conjunto robusto de funcionalidades para uma gestão hoteleira eficiente:
 
-3. Gerenciamento de Reservas:
+### 👤 Gerenciamento de Clientes
+- **Cadastrar:** Adicione novos clientes ao sistema.
+- **Listar:** Visualize todos os clientes cadastrados.
+- **Atualizar:** Modifique informações de clientes existentes.
+- **Excluir:** Remova clientes e suas reservas associadas, se houver.
 
-   - Criar novas reservas associando clientes a quartos disponíveis.
-   - Listar todas as reservas existentes.
-   - Atualizar informações das reservas.
-   - Excluir reservas e liberar os quartos para novas reservas.
+### 🚪 Gerenciamento de Quartos
+- **Cadastrar:** Adicione novos quartos, especificando tipo, valor da diária e capacidade.
+- **Listar:** Verifique todos os quartos e seu status (livre/ocupado).
+- **Atualizar:** Altere dados de quartos que não estejam em uso.
+- **Excluir:** Remova quartos do sistema e cancele as reservas vinculadas.
 
-4. Relatórios:
-   - Relatório de quartos, incluindo o total de quartos, número de quartos disponíveis, ocupados 
-     e o faturamento total.
-   - Relatório de hóspedes, incluindo a quantidade de hóspedes, média de dias alugados e valor médio 
-     das reservas.
+### 🏨 Gerenciamento de Reservas
+- **Criar:** Efetue novas reservas, associando clientes a quartos disponíveis.
+- **Listar:** Consulte todas as reservas ativas no sistema.
+- **Atualizar:** Modifique os detalhes de uma reserva existente.
+- **Excluir:** Cancele reservas e libere os quartos para novas locações.
 
-5. Tela Inicial:
-   - Exibição de informações sobre o sistema, como nome, autores, professor e disciplina, além de 
-     informações do banco de dados, como o número total de registros em cada tabela.
+### 📊 Relatórios Gerenciais
+- **Relatório de Quartos:** Obtenha um panorama completo com total de quartos, ocupação e faturamento.
+- **Relatório de Hóspedes:** Analise dados como a quantidade total de hóspedes, média de dias de locação e valor médio das reservas.
 
-====================================================================================================
-ESTRUTURA DO PROJETO
-====================================================================================================
+### 🖥️ Tela Inicial
+- Um painel inicial que exibe informações sobre o projeto (autores, disciplina) e estatísticas do banco de dados, como o total de registros em cada tabela.
 
-O código é organizado em classes para facilitar a manutenção e expansão do sistema. As classes são:
+## 🛠️ Estrutura do Projeto
 
-- DatabaseConnection: Responsável por gerenciar a conexão com o banco de dados MySQL.
-- Cliente: Contém métodos para operações CRUD relacionados aos clientes.
-- Quarto: Contém métodos para operações CRUD relacionados aos quartos.
-- Reserva: Contém métodos para operações CRUD relacionadas às reservas.
-- Menus: Funções para exibir os menus e capturar as entradas do usuário..
+O código é modular e orientado a objetos para facilitar a manutenção e escalabilidade.
 
-----------------------------------------------------------------------------------------------------
-ESTRUTURA DO BANCO DE DADOS
-----------------------------------------------------------------------------------------------------
+- `DatabaseConnection`: Gerencia a conexão com o banco de dados MySQL.
+- `Cliente`: Métodos CRUD para a entidade de clientes.
+- `Quarto`: Métodos CRUD para a entidade de quartos.
+- `Reserva`: Métodos CRUD para a entidade de reservas.
+- `Menus`: Funções para a interface de usuário no console.
+- `main.py`: Ponto de entrada da aplicação.
 
-O sistema utiliza três tabelas no banco de dados:
+## 🗃️ Estrutura do Banco de Dados
 
-1. Tabela CLIENTE:
-   - Campos: CPF, TELEFONE, NOME, EMAIL, DATA_NASCIMENTO, CEP.
+O sistema utiliza o banco de dados `BDB_hotel` com as seguintes tabelas:
 
-2. Tabela QUARTO:
-   - Campos: NUM_QUARTO, TIPO_QUARTO, VALOR_DIARIA, LIMITE_PESSOAS.
+1.  **CLIENTE**:
+    - `CPF`, `TELEFONE`, `NOME`, `EMAIL`, `DATA_NASCIMENTO`, `CEP`
+2.  **QUARTO**:
+    - `NUM_QUARTO`, `TIPO_QUARTO`, `VALOR_DIARIA`, `LIMITE_PESSOAS`
+3.  **RESERVA**:
+    - `NUM_RESERVA`, `DATA_INICIO`, `DATA_FINAL`, `QUANTIDADE_PESSOAS`, `VALOR_RESERVA`, `CPF`, `NUM_QUARTO`, `CAFE_INCLUSO`
 
-3. Tabela RESERVA:
-   - Campos: NUM_RESERVA, DATA_INICIO, DATA_FINAL, QUANTIDADE_PESSOAS, VALOR_RESERVA, CPF, 
-     NUM_QUARTO, CAFE_INCLUSO.
+## 🚀 Como Executar o Projeto
 
-====================================================================================================
-CONFIGURAÇÃO DO AMBIENTE E EXECUÇÃO DO PROJETO
-====================================================================================================
+Siga os passos abaixo para configurar e executar o sistema em seu ambiente local.
 
-Antes de executar o projeto, siga os passos abaixo para configurar o ambiente:
+### Pré-requisitos
+- Python 3.x
+- Git
+- MySQL Server
 
-1. Certifique-se de que o Python 3.x está instalado no seu sistema. Para verificar a instalação, 
-   execute o comando no terminal:
+### 1. Configuração do Ambiente Virtual
 
-   $ python3 --version
+É uma boa prática usar um ambiente virtual para isolar as dependências.
 
-2. Crie um ambiente virtual para isolar as dependências do projeto:
+```bash
+# Criar o ambiente virtual
+python3 -m venv venv
 
-   $ python3 -m venv nome_da_venv
+# Ativar o ambiente virtual
+# No Linux ou MacOS:
+source venv/bin/activate
+# No Windows:
+venv\Scripts\activate
+```
 
-3. Ative o ambiente virtual:
+### 2. Instalação de Dependências
 
-   - No Linux ou MacOS:
+Com o ambiente virtual ativado, instale a biblioteca necessária:
 
-     $ source nome_da_venv/bin/activate
+```bash
+pip install mysql-connector-python
+```
 
-   - No Windows:
+### 3. Configuração do Banco de Dados
 
-     $ nome_da_venv\Scripts\activate
+Acesse seu terminal MySQL para criar e configurar o banco de dados.
 
-4. Com o ambiente virtual ativado, instale a biblioteca necessária para a conexão com o MySQL:
+```sql
+-- Acesse o MySQL (será solicitada a senha)
+mysql -u root -p
 
-   $ pip install mysql-connector-python
+-- Crie o banco de dados
+CREATE DATABASE BDB_hotel;
 
-5. Verifique se a biblioteca foi instalada corretamente listando as bibliotecas instaladas:
+-- Selecione o banco de dados para uso
+USE BDB_hotel;
+```
 
-   $ pip list
+**Importante:** Não se esqueça de atualizar as credenciais de conexão no arquivo `DatabaseConnection.py` (ou onde a conexão é definida) com seu usuário, senha e nome do banco de dados.
 
-----------------------------------------------------------------------------------------------------
-CONFIGURAÇÃO DO BANCO DE DADOS
-----------------------------------------------------------------------------------------------------
+### 4. Executando o Programa
 
-1. Acesse o MySQL com seu usuário administrativo para configurar o banco de dados:
+Com tudo configurado, execute o arquivo principal para iniciar o sistema:
 
-   $ mysql -u root -p
-
-2. Crie o banco de dados:
-
-   mysql> CREATE DATABASE BDB_hotel;
-
-3. Selecione o banco de dados criado para uso:
-
-   mysql> USE BDB_hotel;
-
-4. Configure as credenciais de conexão no código para acessar o banco de dados, substituindo os 
-   valores pelo seu usuário e senha:
-
-   >> python
-
-   def connect():
-       return mysql.connector.connect(
-           host="localhost",
-           user="seu_usuario",
-           password="sua_senha",
-           database="seu_banco_de_dados",
-           auth_plugin='mysql_native_password'
-       )
-
-==================================================================================================== 
-CLONANDO O REPOSITÓRIO DO GITHUB EM UMA MÁQUINA VIRTUAL LINUX
-----------------------------------------------------------------------------------------------------
-
-Acesse a máquina virtual Linux e abra o terminal.
-
-Certifique-se de que o Git está instalado. Para verificar, execute:
-
-$ git --version
-
-Se o Git não estiver instalado, você pode instalá-lo com o comando:
-
-$ sudo apt-get install git
-
-Navegue até o diretório onde deseja clonar o repositório, por exemplo, a pasta home do usuário:
-
-$ cd ~
-
-Clone o repositório do GitHub:
-
-$ git clone https://github.com/BernardoAbner/trabalho_hotelBD
-
-Isso criará uma pasta chamada sistema-de-hotel no diretório atual.
-
-Acesse o diretório do projeto clonado:
-
-$ cd sistema-de-hotel
-
-------------------------------------------------------------------------------------------------------
-EXECUTAR O PROGRAMA
-------------------------------------------------------------------------------------------------------
-
-1. Com o ambiente virtual ativado e o terminal aberto no diretório raiz do projeto, execute o programa:
-
-   $ python3 main.py
-
-Informações adicionais sobre o sistema, contribuições e estrutura podem ser encontradas no próprio código.
-=======================================================================================================
+```bash
+python3 main.py
+```
