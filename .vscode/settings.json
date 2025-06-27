@@ -9,9 +9,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "trabalhoBD_hotel",
-            "username": "root",
-            "database": "trabalhoBD_hotel"
+            "name": "bd_hotel",
+            "database": "trabalhobd_hotel",
+            "username": "root"
         }
     ]
 }

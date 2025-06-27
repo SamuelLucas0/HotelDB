@@ -1,6 +1,7 @@
-====================================================================================================
+----------------------------------------------------------------------------------------------------
                                  SISTEMA DE GERENCIAMENTO DE HOTEL
-====================================================================================================
+
+----------------------------------------------------------------------------------------------------
 
 Este projeto é um sistema de gerenciamento de hotel desenvolvido em Python, utilizando o MySQL como 
 banco de dados. Ele permite realizar operações CRUD (Criar, Ler, Atualizar e Excluir) para gerenciar 
